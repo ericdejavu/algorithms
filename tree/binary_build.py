@@ -42,6 +42,7 @@ def postorder(node):
 		return
 	postorder(node.left)
 	postorder(node.right)
+	post.append(node.val)
 	print node.val
 
 if __name__=='__main__':
