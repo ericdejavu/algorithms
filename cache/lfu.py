@@ -137,8 +137,10 @@ class LFU:
             return
         if node == self.tail:
             self.tail = self.tail.pre
+            self.tail.next = None
         elif node == self.head:
             self.head = self.head.next
+            self.head.pre = None
         else:
             node.pre.next = node.next
             node.next.pre = node.pre
@@ -153,10 +155,18 @@ class LFU:
         else:
             node.pre.next = node.next
             node.next.pre = node.pre
-        node.next = anchor
-        node.pre = anchor.pre
-        anchor.pre.next = node
-        anchor.pre = node
+        
+        if not anchor:
+            node.next = None
+            node.pre = self.tail
+            self.tail.next = node
+            self.tail = node
+        else:
+            node.next = anchor
+            node.pre = anchor.pre
+            anchor.pre.next = node
+            anchor.pre = node
+
 
     # update list by 
     def __update(self, node):
@@ -167,6 +177,6 @@ class LFU:
             return
         cur = self.__locate(node.next, node)
         if not cur:
-            self.__moveNode(self.tail, node)
+            self.__moveNode(None, node)
             return
         self.__moveNode(cur, node)

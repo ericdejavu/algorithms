@@ -50,7 +50,7 @@ class LRU:
     
     # debug only
     def showNodes(self):
-        # print ('dict:', self.map)
+        print ('dict:', self.map)
         node = self.head
         while node:
             print (node.key)
@@ -88,8 +88,10 @@ class LRU:
             return
         if node == self.tail:
             self.tail = self.tail.pre
+            self.tail.next = None
         elif node == self.head:
             self.head = self.head.next
+            self.head.pre = None
         else:
             node.pre.next = node.next
             node.next.pre = node.pre
