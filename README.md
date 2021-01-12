@@ -7,3 +7,7 @@ I am a student. Recently, we have practiced data structure, dynamic programming 
 	binary tree rebuild 				 	--- python
 ### dynamic programming
 	Fibonacci apply              				--- python
+
+### cache
+	lru
+	lfu
