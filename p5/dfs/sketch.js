@@ -103,12 +103,12 @@ function draw() {
     if (data[1] === 'r') {
       currentc = 'r'
       var c = grids_colors[currenty][currentx];
-      c[3] += 10
+      c[3] += 100
       c[0] = 200
     } else if (data[1] === 'g') {
       currentc = 'g'
       var c = grids_colors[currenty][currentx];
-      c[3] += 10
+      c[3] += 100
       c[1] = 200
     }
   }

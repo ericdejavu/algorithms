@@ -9,5 +9,6 @@ I am a student. Recently, we have practiced data structure, dynamic programming 
 	Fibonacci apply              				--- python
 
 ### cache
-	lru
-	lfu
+	lru              				--- python
+	lfu              				--- python
+

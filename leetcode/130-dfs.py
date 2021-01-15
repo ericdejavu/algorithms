@@ -16,7 +16,9 @@ class Solution(object):
             dfs(x - 1, y)
             dfs(x, y + 1)
             dfs(x, y - 1)
-        
+
+        dfs(1,1)
+
         for i in range(n):
             dfs(i, 0)
             dfs(i, m - 1)
@@ -43,5 +45,14 @@ s.solve(
         ['X', 'O', 'O', 'X'],
         ['X', 'X', 'O', 'X'],
         ['X', 'O', 'X', 'X']
+    ]
+)
+
+s.solve(
+    [
+        ['X', 'X', 'X', 'X'],
+        ['X', 'X', 'X', 'X'],
+        ['X', 'X', 'X', 'X'],
+        ['X', 'X', 'X', 'X']
     ]
 )
